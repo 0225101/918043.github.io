@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>mobile jquery</title>
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+</head>
+<body>
+    <div data-role="page" id="home" data-theme="b">
+        <div data-role="header" data-position="fixed"><h1>飛鏢酒吧</h1></div>
+        <div data-role="content">
+            <img src="img/jumboston.jpg" width="100%" alt="">
+            <a href="#aboutus" data-rel="dialog" data-role="button" data-icon="arrow-r">關於我們</a>
+            <a href="#menu"  data-role="button" data-icon="arrow-r">酒單內容</a>
+            <a href="#game"  data-role="button" data-icon="arrow-r">飛鏢遊戲</a>
+        </div>
+        <div data-role="footer" data-position="fixed">
+            <h1>營業時間:1800-0300</h1>
+            <h1>連絡電話:04-8728411</h1>
+        </div>
+    </div>
+    <div data-role="page" id="aboutus" data-theme="b">
+        <div data-role="header" data-position="fixed"><h1>關於我們</h1></div>
+        <div data-role="content">
+            <img src="img/about us.jpg" width="100%" alt="">
+            <p> 我們目前生活在數位時代，不過可不要都只用手機來社交與聯絡感情喔！與朋友、同事們還是要一起聚聚餐、聊聊天，感情才會好啦！shooter bar就是設計來給大家可以盡情聊天的地方，也可以一起射飛鏢，超好玩的啦！重點是可以喝到各式調酒跟啤酒！</p>
+        </div>
+        <div data-role="footer" data-position="fixed">
+            <h1>營業時間:1800-0300</h1>
+            <h1>連絡電話:04-8728411</h1>
+        </div>
+    </div>
+    <div data-role="page" id="menu" data-theme="b">
+        <div data-role="header" data-position="fixed"><h1>酒單介紹</h1></div>
+        <div data-role="content">
+            <img src="menu1.jpg" width="100%" alt="" id="menuimg">
+            <p id="menumsg">馬丁尼 ( Martini ) 琴酒 + 苦艾酒 馬丁尼有各種不同的表現方式，在這裡說的是最單純的Martini/Gin+Vermouth. 這是一款非常具有男性魅力的酒，是因詹姆士龐德而聞名，他在電影007中最著名的台詞「Shaken, not stirred（用搖的，不要攪拌）」指的是製作的方式（不過電影中得龐德喝的是非正統的－伏特加馬丁尼Vodka Martini）。</p>
+        </div>
+        <div data-role="footer" data-position="fixed">
+            <h1>營業時間:1800-0300</h1>
+            <h1>連絡電話:04-8728411</h1>
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#home" class="btn-active ui-state-persist">首頁</a></li>
+                    <li><a href="javascript:prev()">上一個</a></li>
+                    <li><a href="javascript:next()">下一個</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div data-role="page" id="game" data-theme="b">
+        <div data-role="header" data-position="fixed"><h1>遊戲介紹</h1></div>
+        <div data-role="content">
+            <img src="img/dartgame1.jpg" width="100%" alt="" id="gameimg">
+            <p id="gamemsg">a.遊戲人數1~4人<br>b.規則:從一個基本分數開始扣誰先扣到剛好0分即為贏家</p>
+        </div>
+        <div data-role="footer" data-position="fixed">
+            <h1>營業時間:1800-0300</h1>
+            <h1>連絡電話:04-8728411</h1>
+        </div>
+        <div data-role="navbar">
+            <ul>
+                <li><a href="#home" class="btn-active ui-state-persist">首頁</a></li>
+                <li><a href="javascript:prev()">上一個</a></li>
+                <li><a href="javascript:next()">下一個</a></li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        var i = 0;
+        var img = new Array("menu1.jpg", "menu2.jpg", "menu3.jpg");
+        var msg = new Array("馬丁尼 ( Martini ) 琴酒 + 苦艾酒 馬丁尼有各種不同的表現方式，在這裡說的是最單純的Martini/Gin+Vermouth. 這是一款非常具有男性魅力的酒，是因詹姆士龐德而聞名，他在電影007中最著名的台詞「Shaken, not stirred（用搖的，不要攪拌）」指的是製作的方式（不過電影中得龐德喝的是非正統的－伏特加馬丁尼Vodka Martini）。", "柯夢波丹起源於1970年代，幾乎可算是經典調酒中的小學生。儘管如此，這一杯仍然有可看之處，如果仔細觀察，你會發現，她跟三合一調酒很相像，有基酒、有檸檬汁、也有橙皮酒， 但是加入了蔓越莓汁後，就會瞬間從短飲調酒，變化成能稍微緩一點喝的長飲調酒。","長島冰茶不是茶，只是色澤很像紅茶的一款雞尾酒飲料，它由四種不同的烈酒作為基酒調製而成，酒精度相當高，按照其原始配方調製的長島冰茶酒精度可達40%以上。楊千嬅也在歌里曾唱，「要是回去，沒有止痛藥水，拿來長島冰茶還我半晚安睡」，足見其威力之大。如果你大口大口地喝，那你要小心了。");
+        var gameimg = new Array("img/dartgame1.jpg", "img/dartgame2.jpg", "img/dartgame4.jpg");
+        var gamemsg = new Array("a.遊戲人數1~4人 b.規則:從一個基本分數開始扣誰先扣到剛好0分即為贏家", "a.遊戲人數1~4人 b.規則:八回合內分數最高者即為贏家", "a. 遊戲人數2~4 b.規則:氣球會隨著分數越變越大誰把汽球弄破就出局每次三標可以選擇設一標或兩標");
+        
+        function prev(){
+            i--;
+            if (i < 0) { i = 2;} ;
+            $("#menuimg").attr("src", img[i]);
+            $("#menumsg").text(msg[i]);
+            $("#gameimg").attr("src", gameimg[i]);
+            $("#gamemsg").text(gamemsg[i]);
+        }
+        function next(){
+            i++;
+            if (i > 2){i = 0;};
+            $("#menuimg").attr("src", img[i]);
+            $("#menumsg").text(msg[i]);
+            $("#gameimg").attr("src", gameimg[i]);
+            $("#gamemsg").text(gamemsg[i]);
+        }
+      
+    </script>
+
+</body>
+
+</html>
